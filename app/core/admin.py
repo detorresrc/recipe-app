@@ -15,7 +15,8 @@ class UserAdmin(BaseUserAdmin):
             'fields': (
                 'is_active',
                 'is_staff',
-                'is_superuser'
+                'is_superuser',
+                'groups'
             )
         }),
         (_('Important dates'), {'fields': ('last_login',)}),
@@ -37,7 +38,8 @@ class UserAdmin(BaseUserAdmin):
             'fields': (
                 'is_active',
                 'is_staff',
-                'is_superuser'
+                'is_superuser',
+                'groups'
             ),
             'classes': ('collapse', 'wide')
         }),
@@ -47,3 +49,4 @@ class UserAdmin(BaseUserAdmin):
 admin.site.register(models.User, UserAdmin)
 admin.site.register(models.Recipe)
 admin.site.register(models.Tag)
+admin.site.register(models.Ingredient)
