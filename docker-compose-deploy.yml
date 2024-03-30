@@ -1,7 +1,7 @@
 version: "3.9"
 
 services:
-  web:
+  app:
     build:
       context: .
     restart: always
@@ -32,7 +32,7 @@ services:
       context: ./proxy
     restart: always
     depends_on:
-      - web
+      - app
     ports:
       - 80:8000
     volumes:
